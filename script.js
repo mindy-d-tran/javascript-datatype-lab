@@ -33,6 +33,17 @@ const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 
 // "isUnder25" as an alternative.
 const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
 
+// Start of Part 1
+// Check if all number is divisible by 5
+// if everything is divisible by 5 
+// then it should add up to 0
+const isDivisibleBy5 = (n1%5) + (n2%5) + (n3%5) + (n4%5) === 0 ;
+
+// check if the first number is larger than the last number
+const is1stLargerThanLast = n1 > n4;
+
+// end of part 1
+
 // Finally, log the results.
 console.log(isValid);
 
