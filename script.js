@@ -62,6 +62,8 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
   (n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4);
 
 // start of part 2
+console.log("=============== Part 2 ===============");
+
 const totalDistance = 1500;
 const fuelBudget = 175;
 const avgCostOfFuel = 3;
