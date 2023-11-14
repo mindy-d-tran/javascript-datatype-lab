@@ -19,8 +19,10 @@ console.log(`Are there at least 2 odd numbers: ${isTwoOdd}`);
 // Check three: no number larger than 25
 // This time, we use the OR operator to check
 // if ANY of the numbers is larger than 25.
-const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
-console.log(`Is there numbers over 25? ${isOver25}`);
+// const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
+//changed it so I doesn't use not
+const isOver25 = 25 > n1 || 25 > n2 || 25 > n3 || 25 > n4;
+console.log(`Are the numbers under 25? ${isOver25}`);
 // Check four: all unique numbers
 // This is long, and there are more efficient
 // ways of handling it with other data structures
@@ -45,7 +47,7 @@ const arithmeticChain = (n2-n1) * n3 % n4;
 // for convenience. Note how we negate isOver25 using
 // the ! operator. We could also have tested for 
 // "isUnder25" as an alternative.
-const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
+const isValid = isSum50 && isTwoOdd && isOver25 && isUnique;
 
 // Finally, log the results.
 console.log(`Did it meet all of the conditions? ${isValid}`);
@@ -71,5 +73,5 @@ function gallonsForTrip (mph, milesPerGallon) {
   return totalGallon;
 }
 const totalGallonFor55 = gallonsForTrip(55, 30);
-console.log(`Total gallons for 55mph ${}`);
+console.log(`Total gallons for 55mph ${totalGallonFor55}`);
 // end of part 2
