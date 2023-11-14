@@ -64,4 +64,12 @@ const totalDistance = 1500;
 const fuelBudget = 175;
 const avgCostOfFuel = 3;
 
+
+function gallonsForTrip (mph, milesPerGallon) {
+  let totalGallon = totalDistance * milesPerGallon;
+  totalGallon /= mph;
+  return totalGallon;
+}
+const totalGallonFor55 = gallonsForTrip(55, 30);
+console.log(`Total gallons for 55mph ${}`);
 // end of part 2
