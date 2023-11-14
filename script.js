@@ -35,7 +35,7 @@ console.log(`Are all number unique? ${isUnique}`);
 // if everything is divisible by 5 
 // then it should add up to 0
 const isDivisibleBy5 = (n1%5) + (n2%5) + (n3%5) + (n4%5) === 0 ;
-console(`Are all numbers divisible by 5? ${isDivisibleBy5}`);
+console.log(`Are all numbers divisible by 5? ${isDivisibleBy5}`);
 
 // check if the first number is larger than the last number
 const is1stLargerThanLast = n1 > n4;
