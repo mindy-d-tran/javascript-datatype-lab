@@ -66,12 +66,26 @@ const totalDistance = 1500;
 const fuelBudget = 175;
 const avgCostOfFuel = 3;
 
-
+// calculate the total gallon you need
 function gallonsForTrip (mph, milesPerGallon) {
-  let totalGallon = totalDistance * milesPerGallon;
-  totalGallon /= mph;
+  let totalGallon = totalDistance / milesPerGallon;
   return totalGallon;
 }
-const totalGallonFor55 = gallonsForTrip(55, 30);
-console.log(`Total gallons for 55mph ${totalGallonFor55}`);
+
+const gallonsFor55 = gallonsForTrip(55,30);
+const gallonsFor60 = gallonsForTrip(60,28);
+const gallonsFor75 = gallonsForTrip(75,23);
+
+//calculate if price matches budget
+function withinBudget (totalGallon) {
+  let costOfFeul = totalGallon * avgCostOfFuel;
+  console.log(costOfFeul);
+  return costOfFeul < fuelBudget;
+}
+const inBudget55 = withinBudget(gallonsFor55);
+const inBudget60 = withinBudget(gallonsFor60);
+const inBudget75 = withinBudget(gallonsFor75);
+console.log(`is it within budget? ${inBudget55}`);
+console.log(`is it within budget? ${inBudget60}`);
+console.log(`is it within budget? ${inBudget75}`);
 // end of part 2
