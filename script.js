@@ -67,14 +67,18 @@ const fuelBudget = 175;
 const avgCostOfFuel = 3;
 
 // calculate the total gallon you need
-function gallonsForTrip (mph, milesPerGallon) {
+function gallonsForTrip (milesPerGallon) {
   let totalGallon = totalDistance / milesPerGallon;
   return totalGallon;
 }
 
-const gallonsFor55 = gallonsForTrip(55,30);
-const gallonsFor60 = gallonsForTrip(60,28);
-const gallonsFor75 = gallonsForTrip(75,23);
+const gallonsFor55 = gallonsForTrip(30);
+const gallonsFor60 = gallonsForTrip(28);
+const gallonsFor75 = gallonsForTrip(23);
+
+console.log(`Total amount of gallon for 55mph ${gallonsFor55}`);
+console.log(`Total amount of gallon for 60mph ${gallonsFor60}`);
+console.log(`Total amount of gallon for 75mph ${gallonsFor75}`);
 
 //calculate if price matches budget
 function withinBudget (totalGallon) {
@@ -85,7 +89,23 @@ function withinBudget (totalGallon) {
 const inBudget55 = withinBudget(gallonsFor55);
 const inBudget60 = withinBudget(gallonsFor60);
 const inBudget75 = withinBudget(gallonsFor75);
+
+
 console.log(`is it within budget? ${inBudget55}`);
 console.log(`is it within budget? ${inBudget60}`);
 console.log(`is it within budget? ${inBudget75}`);
+
+//calculate how many hours needed for the trip
+function amountOfTime (hours) {
+  let amountOfHours = totalDistance / hours;
+  return amountOfHours;
+}
+
+const hoursFor55 = amountOfTime(55);
+const hoursFor60 = amountOfTime(60);
+const hoursFor75 = amountOfTime(75);
+
+console.log(`It take ${hoursFor55} hours if you're driving 55mph`);
+console.log(`It take ${hoursFor60} hours if you're driving 60mph`);
+console.log(`It take ${hoursFor75} hours if you're driving 75mph`);
 // end of part 2
