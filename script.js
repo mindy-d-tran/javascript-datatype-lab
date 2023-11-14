@@ -72,40 +72,40 @@ function gallonsForTrip (milesPerGallon) {
   return totalGallon;
 }
 
-const gallonsFor55 = gallonsForTrip(30);
-const gallonsFor60 = gallonsForTrip(28);
-const gallonsFor75 = gallonsForTrip(23);
-
-console.log(`Total amount of gallon for 55mph ${gallonsFor55}`);
-console.log(`Total amount of gallon for 60mph ${gallonsFor60}`);
-console.log(`Total amount of gallon for 75mph ${gallonsFor75}`);
-
-//calculate if price matches budget
-function withinBudget (totalGallon) {
-  let costOfFeul = totalGallon * avgCostOfFuel;
-  console.log(costOfFeul);
-  return costOfFeul < fuelBudget;
-}
-const inBudget55 = withinBudget(gallonsFor55);
-const inBudget60 = withinBudget(gallonsFor60);
-const inBudget75 = withinBudget(gallonsFor75);
-
-
-console.log(`is it within budget? ${inBudget55}`);
-console.log(`is it within budget? ${inBudget60}`);
-console.log(`is it within budget? ${inBudget75}`);
-
 //calculate how many hours needed for the trip
 function amountOfTime (hours) {
   let amountOfHours = totalDistance / hours;
   return amountOfHours;
 }
 
+//calculate if price matches budget
+function withinBudget (totalGallon) {
+  let costOfFeul = totalGallon * avgCostOfFuel;
+  return costOfFeul < fuelBudget;
+}
+
+const gallonsFor55 = gallonsForTrip(30);
+const gallonsFor60 = gallonsForTrip(28);
+const gallonsFor75 = gallonsForTrip(23);
+
 const hoursFor55 = amountOfTime(55);
 const hoursFor60 = amountOfTime(60);
 const hoursFor75 = amountOfTime(75);
 
-console.log(`It take ${hoursFor55} hours if you're driving 55mph`);
-console.log(`It take ${hoursFor60} hours if you're driving 60mph`);
-console.log(`It take ${hoursFor75} hours if you're driving 75mph`);
+const inBudget55 = withinBudget(gallonsFor55);
+const inBudget60 = withinBudget(gallonsFor60);
+const inBudget75 = withinBudget(gallonsFor75);
+
+console.log(`Total amount of gallon for 55mph ${gallonsFor55.toFixed(2)}`);
+console.log(`Total amount of gallon for 60mph ${gallonsFor60.toFixed(2)}`);
+console.log(`Total amount of gallon for 75mph ${gallonsFor75.toFixed(2)}`);
+
+console.log(`It take ${hoursFor55.toFixed(2)} hours if you're driving 55mph`);
+console.log(`It take ${hoursFor60.toFixed(2)} hours if you're driving 60mph`);
+console.log(`It take ${hoursFor75.toFixed(2)} hours if you're driving 75mph`);
+
+console.log(`is it within budget for 55mp? ${inBudget55}`);
+console.log(`is it within budget for 60mph? ${inBudget60}`);
+console.log(`is it within budget for 75mph? ${inBudget75}`);
+
 // end of part 2
